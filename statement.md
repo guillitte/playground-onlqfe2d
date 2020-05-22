@@ -1,6 +1,8 @@
 # Bonjour!
 
 Ce programme présente la factorisation par la méthode de Lenstra qui utilise des courbes elliptiques sur les entiers modulaires.
+Cette version utilise des courbes de Montgomery, pour lesquelles les opérations arithétiques peuvent être optimisées plus efficacement.
+Les calculs n'utilisent que les coordonées x et z du point projectif.
 
 ```python runnable
 from time import time
@@ -68,6 +70,7 @@ def sieve(n):
     return ps
 
 # Addition de deux points d'une courbe de Montgomery
+# Calcule P+Q sur base de P, Q et P-Q
 def addPoints(xp, zp, xq, zq, xpq, zpq, n):
     
     u = (xp + zp) * (xq - zq) %n
@@ -137,7 +140,7 @@ def montgomery(n, limit=1000, primes=None):
             if i%1000==0 :                
                 g = gcd(z,n)
                 if g>1:
-                    print('g=',g, 'n=',n)
+                    #print('g=',g, 'n=',n)
                     return g                   
             pp = p * pp
     
