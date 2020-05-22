@@ -145,7 +145,7 @@ def montgomery(n, limit=1000, primes=None):
     #print('montgomery : g=',g)    
     return g
 
-def factorECM(n, k=25, limit=10000, div=lenstrap1, primes=None):
+def factorECM(n, k=25, limit=10000, div=montgomery, primes=None):
     # Décompose n en facteurs probablement premiers
     if primes is None:
          primes = sieve(limit)    
