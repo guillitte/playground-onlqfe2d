@@ -1,7 +1,7 @@
 # Bonjour!
 
 Ce programme présente la factorisation par la méthode de Lenstra qui utilise des courbes elliptiques sur les entiers modulaires.
-Cette version utilise des courbes de Montgomery, pour lesquelles les opérations arithétiques peuvent être optimisées plus efficacement.
+Cette version utilise des courbes de Montgomery, pour lesquelles les opérations arithmétiques peuvent être optimisées plus efficacement.
 Les calculs n'utilisent que les coordonées x et z du point projectif.
 
 ```python runnable
